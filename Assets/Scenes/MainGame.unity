@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 325472102}
   - component: {fileID: 325472106}
   - component: {fileID: 325472104}
+  - component: {fileID: 325472107}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Untagged
@@ -222,6 +223,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playBall: 0
   ballOnPadOffset: 0.4
+  ballSpeed: 6.5
+  newDirFactor: 6
   paddleScript: {fileID: 1512748124}
   ballRb: {fileID: 325472106}
 --- !u!50 &325472106
@@ -251,6 +254,42 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!58 &325472107
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325472101}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 0.49999997
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1021,7 +1060,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83a2f333984462e448aa4733077f55a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5.5
+  paddleSpeed: 6
   paddlePos: {x: 0, y: 0}
 --- !u!1 &2018304946
 GameObject:
