@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 3
   tags:
   - Paddle
+  - Vertical Walll
+  - Horizontal Wall
   layers:
   - Default
   - TransparentFX
