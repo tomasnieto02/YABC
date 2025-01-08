@@ -5,7 +5,7 @@ using UnityEngine;
 public class Paddle : MonoBehaviour
 {
     public float speed;
-    
+    public Vector2 paddlePos;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -24,6 +24,7 @@ public class Paddle : MonoBehaviour
         else if (right && transform.position.x < 8)
         {
             transform.Translate(Vector2.right * Time.deltaTime *speed);
-        } 
+        }
+        paddlePos = transform.position;
     }
 }
