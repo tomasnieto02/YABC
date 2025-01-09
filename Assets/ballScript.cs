@@ -14,6 +14,7 @@ public class ballScript : MonoBehaviour
     public float ballSpeed;
     // Variable for calculating the ball's direction when it bounces on the paddle.
     public float newDirFactor;
+    private int currentBricks = 80;
     public gameLogic logic;
     // Vector for moving the ball in a direction.
     Vector2 direction;
@@ -45,6 +46,10 @@ public class ballScript : MonoBehaviour
         {
             transform.position = paddleScript.paddlePos + (Vector2.up * ballOnPadOffset);
         }
+        if (currentBricks == 0)
+        {
+            SceneManager.LoadScene("Win");
+        }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -71,6 +76,7 @@ public class ballScript : MonoBehaviour
             {
                 Destroy(collision.gameObject);
                 logic.addScore(50);
+                currentBricks--;
                 if (ballSpeed < 6.5)
                 {
                     ballSpeed = 6.5f;
@@ -80,6 +86,7 @@ public class ballScript : MonoBehaviour
             {
                 Destroy(collision.gameObject);
                 logic.addScore(100);
+                currentBricks--;
                 if (ballSpeed < 6.5)
                 {
                     ballSpeed = 6.5f;
@@ -89,6 +96,7 @@ public class ballScript : MonoBehaviour
             {
                 Destroy(collision.gameObject);
                 logic.addScore(200);
+                currentBricks--;
                 if (ballSpeed < 6.5)
                 {
                     ballSpeed = 6.5f;
@@ -98,6 +106,7 @@ public class ballScript : MonoBehaviour
             {
                 Destroy(collision.gameObject);
                 logic.addScore(300);
+                currentBricks--;
                 if (ballSpeed < 6.5)
                 {
                     ballSpeed = 6.5f;
