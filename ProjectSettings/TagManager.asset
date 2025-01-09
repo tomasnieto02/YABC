@@ -7,6 +7,16 @@ TagManager:
   - Paddle
   - Vertical Walll
   - Horizontal Wall
+  - Blue Brick
+  - Yellow Row
+  - Blue Row
+  - Orange Row
+  - Red Row
+  - Yellow Brick
+  - Orange Brick
+  - Red Brick
+  - Logic
+  - Bottom Wall
   layers:
   - Default
   - TransparentFX
