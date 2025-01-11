@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class startGame : MonoBehaviour
 {
+    // Loads the Main game
     public void gameStart()
     {
         Time.timeScale = 1;

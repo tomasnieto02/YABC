@@ -12,6 +12,7 @@ public class pauseScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Pauses or resumes the game when escape key is pressed.
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (isPaused)
@@ -25,6 +26,7 @@ public class pauseScript : MonoBehaviour
         }
     }
 
+    // Resumes game.
     public void Resume()
     {
         pauseUI.SetActive(false);
@@ -32,6 +34,7 @@ public class pauseScript : MonoBehaviour
         isPaused = false;
     }
 
+    // Pauses game.
     void Pause()
     {
         pauseUI.SetActive(true);

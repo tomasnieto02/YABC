@@ -14,6 +14,7 @@ public class ballScript : MonoBehaviour
     public float ballSpeed;
     // Variable for calculating the ball's direction when it bounces on the paddle.
     public float newDirFactor;
+    // Keeps track of how many blocks are left.
     private int currentBricks = 80;
     private AudioSource sfx;
     public gameLogic logic;
@@ -48,6 +49,7 @@ public class ballScript : MonoBehaviour
         {
             transform.position = paddleScript.paddlePos + (Vector2.up * ballOnPadOffset);
         }
+        // Win condition.
         if (currentBricks == 0)
         {
             SceneManager.LoadScene("Win");
@@ -57,7 +59,7 @@ public class ballScript : MonoBehaviour
     {
         if (playBall)
         {
-            if (collision.gameObject.tag == "Paddle")
+            if (collision.gameObject.CompareTag("Paddle"))
             {
                 // Gets the paddle's half width.
                 float halfPaddle = collision.collider.bounds.size.x;
@@ -70,49 +72,30 @@ public class ballScript : MonoBehaviour
                 float currentBallSpeed = ballRb.linearVelocity.magnitude;
                 ballRb.linearVelocity = direction * currentBallSpeed;
             }
-            else if (collision.gameObject.tag == "Vertical Wall")
-            {
-                ballRb.linearVelocityY = - ballRb.linearVelocity.y;
-            }
+            // Each type of brick adds a different amount of points to the overall score.
             else if (collision.gameObject.CompareTag("Blue Brick"))
             {
                 Destroy(collision.gameObject);
                 logic.addScore(50);
                 currentBricks--;
-                if (ballSpeed < 6.5)
-                {
-                    ballSpeed = 6.5f;
-                }
             }
             else if (collision.gameObject.CompareTag("Yellow Brick"))
             {
                 Destroy(collision.gameObject);
                 logic.addScore(100);
                 currentBricks--;
-                if (ballSpeed < 6.5)
-                {
-                    ballSpeed = 6.5f;
-                }
             }
             else if (collision.gameObject.CompareTag("Orange Brick"))
             {
                 Destroy(collision.gameObject);
                 logic.addScore(200);
                 currentBricks--;
-                if (ballSpeed < 6.5)
-                {
-                    ballSpeed = 6.5f;
-                }
             }
             else if (collision.gameObject.CompareTag("Red Brick"))
             {
                 Destroy(collision.gameObject);
                 logic.addScore(300);
                 currentBricks--;
-                if (ballSpeed < 6.5)
-                {
-                    ballSpeed = 6.5f;
-                }
             }
             sfx.Play();
         }
