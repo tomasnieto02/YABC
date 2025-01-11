@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 47383a198e15d324f9120b2137c54f1f
+guid: c221c1fdc92ef744cb19829332f0660c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2677202414294962157
-    second: Logo Tomani_0
+      213: 5989905459889153336
+    second: Logo2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Logo Tomani_0
+      name: Logo2_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 269
-        height: 478
+        width: 265
+        height: 475
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3107120b69aa8dad0800000000000000
-      internalID: -2677202414294962157
+      spriteID: 835add6a74b602350800000000000000
+      internalID: 5989905459889153336
       vertices: []
       indices: 
       edges: []

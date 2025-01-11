@@ -15,6 +15,7 @@ public class ballScript : MonoBehaviour
     // Variable for calculating the ball's direction when it bounces on the paddle.
     public float newDirFactor;
     private int currentBricks = 80;
+    private AudioSource sfx;
     public gameLogic logic;
     // Vector for moving the ball in a direction.
     Vector2 direction;
@@ -30,6 +31,7 @@ public class ballScript : MonoBehaviour
         // Gets a normalized direction for the ball's movement.
         direction = Vector2.one.normalized;
         logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<gameLogic>();
+        sfx = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame.
@@ -112,19 +114,7 @@ public class ballScript : MonoBehaviour
                     ballSpeed = 6.5f;
                 }
             }
-            if(collision.gameObject.CompareTag("Bottom Wall"))
-            {
-                if (logic.lives > 0)
-                {
-                    playBall = false;
-                    logic.decreaseLive();
-                }
-                else
-                {
-                    playBall = false;
-                    SceneManager.LoadScene("GameOver"); 
-                }
-            }
+            sfx.Play();
         }
     }
 }

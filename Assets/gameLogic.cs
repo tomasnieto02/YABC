@@ -15,7 +15,6 @@ public class gameLogic : MonoBehaviour
         score += scoreToAdd;
         scoreText.text = score.ToString();
     }
-    [ContextMenu("Decreade lives")]
     public void decreaseLive()
     {
         lives--;

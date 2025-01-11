@@ -17,6 +17,7 @@ TagManager:
   - Red Brick
   - Logic
   - Bottom Wall
+  - Ball
   layers:
   - Default
   - TransparentFX
